@@ -6,10 +6,9 @@ img {
 .fancy-header {
     color: #093275;
     text-decoration: underline;
-}
-
-h1 {
-    text-align: center
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
 }
 
 h2 {
