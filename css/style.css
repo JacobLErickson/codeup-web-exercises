@@ -4,6 +4,49 @@ img {
 }
 
 .fancy-header {
-    color:purple;
+    color: #093275;
     text-decoration: underline;
+}
+
+h1 {
+    text-align: center
+}
+
+h2 {
+    color:#093275;
+    text-decoration: underline;
+}
+
+body {
+    background-color: white;
+    background-image: url(../img/stripes-light.png);
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: upper-roman;
+}
+
+th, td {
+    padding: 3px;
+}
+
+th {
+    font-weight: bold;
+    text-decoration: underline;
+
+a:link {
+    color: #093275;
+}
+
+a:visited {
+    color: #7d7d7d
+}
+
+a:hover {
+    color: #ef1515
 }
