@@ -18,7 +18,8 @@ h2 {
 
 body {
     background-color: white;
-    background-image: url(../img/stripes-light.png);
+    background-image: url("../img/stripes-light.png");
+    background-attachment: fixed;
     font-family: 'Allerta Stencil', sans-serif;
 }
 
