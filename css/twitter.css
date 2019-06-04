@@ -84,16 +84,42 @@ a {
 }
 .profile-details{
     float: left;
-    width: 25%;
+    width: calc(25% - 16px);
     margin: 0 .5em;
 }
 .timeline{
-    float: center;
-    width: 50%;
-    margin: 0 calc(50% - .5em);
+    float: left;
+    width: calc(50% - 16px);
+    margin: 0 .5 em;
 }
 .who-to-follow{
     float: right;
-    width: 25%;
-    margin: 0 calc(25% - .5em);
+    width: calc(25% - 16px);
+    margin: 0 .5em;
+}
+.container {
+    margin: 2em;
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+.media-image {
+    max-width: 50px;
+    margin-top: 1.33em;
+    float: left;
+}
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
+}
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: .5em;
 }
