@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+   .column {
+        float: left;
+        height: 50px;
+        padding: 10px;
+        background-color: #E1E1E1;
+        border: 2px solid black;
+    }
+    .column.one-half {
+        width: 100%;
+    }
+
+    .column.one-third {
+        width: 33.33%;
+    }
+
+    .column.one-fourth {
+        width: 25%;
+    }
+
+    .column.one-sixth {
+        width: 16.67%;
+    }
+
+    .column.one-eight {
+        width: 12.5%;
+    }
