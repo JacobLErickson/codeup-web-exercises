@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: olivedrab;
+}
+
 container {
     width: 100%;
     margin: 0;
@@ -9,13 +13,13 @@ container {
 
 .column {
     float: left;
-    height: 50px;
+    height: 40px;
     padding: 10px;
-    background-color: #E1E1E1;
-    border: 1px solid black;
-    margin: 20px auto;
+    margin: 10px auto;
     font-weight: bold;
+    text-align: center;
 }
+
 .column.one-half {
     width: 50%;
 }
@@ -34,4 +38,16 @@ container {
 
 .column.one-eighth {
     width: 12.5%;
+}
+
+.twos {
+    background-color: red;
+    border: 1px solid gold;
+    color: gold;
+}
+
+.threes {
+    background-color: gold;
+    border: 1px solid red;
+    color: red;
 }
