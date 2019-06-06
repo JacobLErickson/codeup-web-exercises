@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/order-pizza.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"><img src="img/pizzaplanet.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Order Online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Explore planets near you!</button>
+                    </form>
+                </li>
+            </ul>
+            <a class="nav-link" href="#"><img src="img/buzz.png" class="profile-picture">Sign Out</a>
+        </div>
+    </nav>
+    <div class="container1">
+        <div class="jumbotron jumbotron-fluid">
+            <h1 class="display-4">Pizza Planet</h1>
+            <p class="lead">The Best Pizza on the Planet!</p>
+        </div>
+        <div class="build-tabs">
+            <h2>Build Your Own Pizza!</h2>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Size and Crust <span class="badge badge-danger">1</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="#">Cheese and Sauce <span class="badge badge-danger">2</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="#">Toppings <span class="badge badge-danger">3</span></a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="card">
+                <div class="card-header p-3 mb-2 bg-danger text-white">
+                    Choose Size and Crust
+                </div>
+                <div class="card-body">
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Hand Tossed
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Garlic seasoned crust with a rich, buttery taste.</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="handtossed" id="small" value="option1" checked>
+                                        <label class="form-check-label" for="small">
+                                            Small (10")
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="handtossed" id="medium" value="option2">
+                                        <label class="form-check-label" for="medium">
+                                            Medium (12")
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="handtossed" id="large" value="option3">
+                                        <label class="form-check-label" for="large">
+                                            "To Infinity and Beyond" (24")
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Crispy Thin
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Thin enough for optimum crispy to crunchy ratio.</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crispysize" id="medium" value="option1" checked>
+                                        <label class="form-check-label" for="medium">
+                                            Medium (12")
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crispysize" id="large" value="option2">
+                                        <label class="form-check-label" for="large">
+                                            Large (14")
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crispysize" id="xlarge" value="option3">
+                                        <label class="form-check-label" for="xlarge">
+                                            "I am a sad, strange little man" (36")
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer class="card-footer text-right">
+                        <a href="#" class="btn p-3 mb-2 bg-success text-white">Next Step ></a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

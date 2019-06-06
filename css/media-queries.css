@@ -1,0 +1,151 @@
+/*mobile*/
+@media screen and (max-width:500px) {
+    body{
+        font-family:arial;
+        margin:auto;
+        padding:10px;
+    }
+
+    .alert-info{
+        background-color:#CCFFFF;
+        border:2px solid #CCC;
+        text-align:center;
+        width:(100% - 20px);
+        margin:auto;
+        padding:20px;
+
+    }
+    .alert-info a {
+        text-decoration:none;
+        color:black;
+
+    }
+
+    h1 {
+        padding:5px;
+        text-align:center;
+        margin:auto;
+    }
+    ul {
+        padding:0;
+    }
+    li{
+        background-color:#CCC;
+        list-style:none;
+        width: calc(100% -20px);
+        text-align:center;
+        margin:10px 0;
+        padding:20px;
+    }
+    img{
+        height:224px;
+        width:339px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    section{
+        font-family:Arial;
+
+    }
+    section.sub-section{
+        font-style:Italic;
+
+    }
+    footer{
+        display:inline-block;
+        width:100%;
+    }
+    footer>p{
+        float:left;
+    }
+    footer>div{
+        float:right;
+    }
+    .social>img{
+        width:40px;
+        height:25px;
+        display:inline-block;
+    }
+}
+
+
+/*desktop*/
+@media screen and (min-width:501px) {
+    body{
+        font-family:arial;
+        margin:auto;
+        padding:10px;
+    }
+
+    .alert-info{
+        display: none;
+    }
+
+    h1 {
+        padding:5px;
+        width: 30%;
+        float: left;
+    }
+    ul {
+        padding:0;
+    }
+    li {
+        float: right;
+        display: inline-block;
+        list-style:none;
+        width: calc(100% -20px);
+        text-align:center;
+        margin:10px 0;
+        padding:20px;
+    }
+    img{
+        height:385px;
+        width:890px;
+        display:block;
+        margin-left:calc(50% - 445px);
+        margin-right:calc(50% - 445px);
+    }
+    section{
+        font-family:Arial;
+
+    }
+    section.main{
+        float: left;
+        width: 60%;
+        height: 500px;
+        margin: 10px;
+    }
+    section.sub-section{
+        float: right;
+        width: 30%;
+        height: 500px;
+        margin: 10px;
+        font-style:Italic;
+
+    }
+    footer{
+        display:inline-block;
+        width:100%;
+    }
+    footer>p{
+        float:left;
+    }
+    footer>div{
+        float:right;
+        margin: 0;
+    }
+    .social>img{
+        width:40px;
+        height:25px;
+        display:inline-block;
+        margin: 0;
+    }
+
+    #social-media-links>a{
+        width:40px;
+        height:25px;
+        display:inline-block;
+        margin: 0;
+    }
+}
