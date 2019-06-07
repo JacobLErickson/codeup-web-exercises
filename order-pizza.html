@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Place Order</title>
+    <title>Pizza Planet Online Pizza Order</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/order-pizza.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -40,19 +40,19 @@
             <h2>Build Your Own Pizza!</h2>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Size and Crust <span class="badge badge-danger">1</span></a>
+                    <a class="nav-link active" href="#size">Size and Crust <span class="badge badge-danger">1</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger" href="#">Cheese and Sauce <span class="badge badge-danger">2</span></a>
+                    <a class="nav-link text-danger" href="#cheese">Cheese and Sauce <span class="badge badge-danger">2</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger" href="#">Toppings <span class="badge badge-danger">3</span></a>
+                    <a class="nav-link text-danger" href="#toppings">Toppings <span class="badge badge-danger">3</span></a>
                 </li>
             </ul>
         </div>
         <div>
             <div class="card">
-                <div class="card-header p-3 mb-2 bg-danger text-white">
+                <div class="card-header p-3 mb-2 bg-danger text-white" id="size">
                     Choose Size and Crust
                 </div>
                 <div class="card-body">
@@ -125,7 +125,138 @@
                         </div>
                     </div>
                     <footer class="card-footer text-right">
-                        <a href="#" class="btn p-3 mb-2 bg-success text-white">Next Step ></a>
+                        <a href="#cheese" class="btn p-3 mb-2 bg-success text-white">Next Step ></a>
+                    </footer>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header p-3 mb-2 bg-danger text-white" id="cheese">
+                    Choose Cheese and Sauce
+                </div>
+                <div class="card-body">
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Cheese
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="cheese_amount">How Much?</label>
+                                <select class="form-control" id="cheese_amount">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                    <option>Double</option>
+                                    <option>Thicc</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Sauce
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="sauce_type">What Type?</label>
+                                <select class="form-control" id="sauce_type">
+                                    <option>Tomato Sauce</option>
+                                    <option>Madrinara Sauce</option>
+                                    <option>BBQ Sauce</option>
+                                    <option>Alfredo Sauce</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sauce_amount">How Much?</label>
+                                <select class="form-control" id="sauce_amount">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                    <option>XXtra</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="card-footer text-right">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="#size" class="btn p-3 mb-2 bg-success text-white">< Previous Step</a>
+                            <a href="#toppings" class="btn p-3 mb-2 bg-success text-white">Next Step ></a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header p-3 mb-2 bg-danger text-white" id="toppings">
+                    Choose Toppings
+                </div>
+                <div class="card-body">
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Choose Meats
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="option1">
+                                        <label class="custom-control-label" for="customCheck1">Beef</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2" value="option2">
+                                        <label class="custom-control-label" for="customCheck2">Ham</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3" value="option3">
+                                        <label class="custom-control-label" for="customCheck3">Philly Steak</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck4" value="option4">
+                                        <label class="custom-control-label" for="customCheck4">Bacon</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card inner_card">
+                        <div class="card-header">
+                            Choose Non-Meats
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input p-3 mb-2 bg-success text-white" id="customCheck5" value="option5">
+                                        <label class="custom-control-label" for="customCheck5">Green Peppers</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input p-3 mb-2 bg-success text-white" id="customCheck6" value="option6">
+                                        <label class="custom-control-label" for="customCheck6">Mushrooms</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input p-3 mb-2 bg-success text-white" id="customCheck7" value="option7">
+                                        <label class="custom-control-label" for="customCheck7">Onions</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input p-3 mb-2 bg-success text-white" id="customCheck8" value="option8">
+                                        <label class="custom-control-label" for="customCheck8">Jalapeño Peppers</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer class="card-footer text-right">
+                        <a href="#" class="btn p-3 mb-2 bg-success text-white">Checkout <img src="img/shopping-cart.png" class="card-footer-img" alt=""></a>
                     </footer>
                 </div>
             </div>
