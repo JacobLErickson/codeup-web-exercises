@@ -68,12 +68,12 @@
     }
 
     function second(num) {
-        console.log("The element at index 0 is: " + num[1]);
+        console.log("The element at index 1 is: " + num[1]);
         return num[1];
     }
 
     function last(num) {
-        console.log("The element at index 0 is: " + num[num.length - 1]);
+        console.log("The element at the last index is: " + num[num.length - 1]);
         return num[num.length - 1];
     }
 
