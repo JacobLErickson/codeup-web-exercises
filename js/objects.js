@@ -84,7 +84,7 @@
     var books = [
         {
             title: "The Mystery of God and the Spring of the Water of Life",
-            k = true,
+            k: true,
             author: {
                 firstName: "sahnghong",
                 lastName: "Ahn"
@@ -92,7 +92,7 @@
         },
         {
             title: "Mother's Wish",
-            k = true,
+            k: true,
             author: {
                 firstName: "Joo-Cheol",
                 lastName: "Kim "
@@ -100,7 +100,7 @@
         },
         {
             title: "The Art of War",
-            k = false,
+            k: false,
             author: {
                 firstName: "Sun",
                 lastName: "Tzu"
@@ -108,7 +108,7 @@
         },
         {
             title: "Acts",
-            k = false,
+            k: false,
             author: {
                 firstName: "Luke",
                 lastName: "the Apostle"
@@ -116,7 +116,7 @@
         },
         {
             title: "Revelation",
-            k = false,
+            k: false,
             author: {
                 firstName: "John",
                 lastName: "son of Joseph"
@@ -153,7 +153,7 @@
     books.forEach(function (book) {
         console.log("Book Number: " + books.indexOf(book));
         console.log("Title: " + book.title);
-        if (k = true) {
+        if (book.k == 1) {
             console.log("Author: " + book.author.lastName + book.author.firstName);
         } else {
             console.log("Author: " + book.author.firstName + " " + book.author.lastName);
@@ -171,5 +171,23 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(book){
+        var book = new Object();
+        var bookTitle = prompt("What is the title of the book?");
+        var bookAuthor = prompt("Who is the author of the book?");
+        book.title = bookTitle;
+        book.author = bookAuthor;
+        console.log("Book Title: " + book.title);
+        console.log("Book Author: " + book.author);
+    };
+
+    function showBookInfo(book){
+        console.log("Book Title: " + book.title);
+        console.log("Book Author: " + book.author);
+    };
+
+    var newBook = createBook();
+    showBookInfo(newBook);
 
 })();
