@@ -10,9 +10,10 @@
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 100%;
+            width: 95%;
             height: 700px;
         }
+
     </style>
 </head>
 <body>
@@ -25,15 +26,93 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-utils.js"></script>
 <!-- Custom JS -->
 <script>
     mapboxgl.accessToken = mapBoxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [29.590442, -98.357494]
-    });
+    var sanAntonio;
+    geocode("San Antonio, TX", mapBoxToken).then(function(SATX){
+        var sanAntonio = SATX;
+        var mapOptions = {
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 13,
+            center: sanAntonio
+        });
+        var map = new mapboxgl.Map(mapOptions);
+        map.setZoom(15);
+
+
+        var favoriteRestaurants = [
+            {name: "Original Blanco Cafe"},
+            {name: "Pinch Boil House"},
+            {name: "Texas de Brazil"},
+            {name: "La Panaderia"},
+            {name: "Rainforest Cafe"}
+        ];
+
+        favoriteRestaurants.forEach(function() {
+            geocode(item.name, mapBoxToken).then(function(coordinates){
+                var popup1 = new mapboxgl.Popup({closeButton:true})
+                    .setHTML("<p>"+item.name+"</p>")
+                    .setLngLat(coordinates);
+                var marker1 = new mapboxgl.Marker({color:"orange"})
+                    .setLngLat(blancoCafe)
+                    .addTo(map)
+                    .setPopup(popup1);
+            })
+        });
+
+    //     geocode("Original Blanco Cafe", mapBoxToken).then(function(blancoCafe){
+    //         var popup1 = new mapboxgl.Popup({closeButton:true})
+    //             .setHTML("<p>Original Blanco Cafe</p>")
+    //             .setLngLat(blancoCafe);
+    //         var marker1 = new mapboxgl.Marker({color:"orange"})
+    //             .setLngLat(blancoCafe)
+    //             .addTo(map)
+    //             .setPopup(popup1);
+    //     })
+    // })
+
+
+
+
+
+
+    // var zionCafe = new mapboxgl.Marker()
+    //     .setLngLat([-98.357462, 29.590199])
+    //     .addTo(map);
+    //
+    // var zionPopup = new mapboxgl.Popup()
+    //     .setLngLat([-98.357462, 29.590199])
+    //     .setHTML("<h3>Zion Cafe</h3><p>Meals prepared with<br>the heart of Mother</p>")
+    //     .addTo(map);
+    //
+    // var seoulCafe = new mapboxgl.Marker()
+    //     .setLngLat([-98.428652, 29.485337])
+    //     .addTo(map);
+    //
+    // var seoulPopup = new mapboxgl.Popup()
+    //     .setLngLat([-98.428652, 29.485337])
+    //     .setHTML("<h3>Seoul Asian Market<br>and Cafe</h3><p>Authentic Korean market</p>")
+    //     .addTo(map);
+    //
+    // var losBalitos = new mapboxgl.Marker()
+    //     .setLngLat([-98.437535, 29.660926])
+    //     .addTo(map);
+    //
+    // var balitosPopup = new mapboxgl.Popup()
+    //     .setLngLat([-98.437535, 29.660926])
+    //     .setHTML("<h3>Los Balito's Taco Shop</h3><p>'California' Burritos</p>")
+    //     .addTo(map);
+    //
+    // marker.setPopup(zionPopup);
+    // marker.setPopup(seoulPopup);
+    // marker.setPopup(balitosPopup);
+
+
+
 </script>
 </body>
 </html>
