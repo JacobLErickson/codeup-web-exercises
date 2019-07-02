@@ -1,7 +1,24 @@
 "use strict";
 
-$('li').css("font-size", "20px");
+// $('li').css("font-size", "20px");
+//
+// $('h1, p, li').css("background-color", "yellow");
+//
+// alert($('h1').html());
 
-$('h1, p, li').css("background-color", "yellow");
+$('h1').click(function() {
+    $(this).css('background-color', 'blue');
+});
 
-alert($('h1').html());
+$('p').dblclick(function() {
+    $(this).css('font-size', '18px');
+});
+
+$('li').hover(
+    function() {
+        $(this).css('color', 'red');
+    },
+    function() {
+        $(this).css('color', 'black');
+    }
+);
