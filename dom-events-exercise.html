@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events</title>
+</head>
+<body>
+
+
+
+<h1>DOM Events Exercise</h1>
+
+<h3>Hello</h3>
+<!--<input type="text" onkeydown="changecolor(event)">-->
+
+
+<!--<script>-->
+
+<!--    function changeColor(event) {-->
+<!--        var x = event.which;-->
+<!--        if (x == 103, ) {-->
+<!--            document.body.style.background = "#5A2D72";-->
+<!--        };-->
+<!--    };-->
+
+<input type="text" size="50" onkeydown="keyCode(event)">
+
+<script>
+    function keyCode(event) {
+        var x = event.keyCode;
+        if (x == 103) {
+            alert ("You pressed the Escape key!");
+        }
+    }
+
+
+</script>
+</body>
+</html>

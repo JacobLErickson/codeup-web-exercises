@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <button id="btn">Click</button>
+
+    <button id="unbtn">Unclick</button>
+
+    <input type="text" id="test">
+
+    <input id="submit" type="submit">
+</form>
+<script>
+    "use strict";
+
+    var click = document.getElementById("btn")
+    var unclick = document.getElementById("unbtn")
+
+    var one = function(event){
+        alert("You clicked!");
+    };
+
+    click.addEventListener('click', one);
+
+
+    function clicked(event) {
+        click.removeEventListener('click', one);
+    }
+
+    unclick.addEventListener('click', clicked);
+
+    var test1 = document.getElementById("test").value;
+
+    console.log(test1);
+
+
+
+
+
+</script>
+</body>
+</html>
