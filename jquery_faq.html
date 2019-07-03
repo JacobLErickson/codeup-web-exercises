@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery FAQ</title>
+    <style>
+
+        .visible {
+            visibility: visible;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlight {
+            background-color: #FF0;
+        }
+
+        .term{
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Big Bend National Park FAQ</h1>
+    <a href="https://www.nps.gov/bibe/faqs.htm">Source</a><br>
+
+    <a href="#" id="switch">Click here to view/hide the answers.</a>
+    <dl>
+        <dt class="term" id="term">Is it possible to enter the park after entrance stations close?</dt>
+            <dd class="description">If you arrive after hours and entrance stations or visitor centers are closed, you may proceed into the park. Please pay your entry fee the following morning at a park visitor center. Campgrounds are self-registration. There is no "boondock" camping available in Big Bend.</dd>
+        <dt class="term">Are ATMs available in the park?</dt>
+            <dd class="description">Automated Teller Machines (ATMs) are located at the Chisos Basin Lodge, Rio Grande Village Store, and at the Panther Junction service stations during operating hours. An ATM is also located outside the park in Study Butte.</dd>
+        <dt class="term">Is it possible to cross into Mexico from the park?</dt>
+            <dd class="description">Yes, visitors can legally cross into Mexico through the Boquillas Crossing Port of Entry. This Class B port of entry is open from 9:00am-6:00pm, Friday to Monday during summer months, and 8:00am-5:00pm, Wednesday to Sunday during the winter..</dd>
+        <dt class="term">What camping options are available in the park?</dt>
+            <dd class="description">There are three NPS developed campgrounds in the park: the Chisos Basin, Rio Grande Village, and Cottonwood campgrounds. Sites in developed campgrounds are offered on a first come, first-served basis (sites fill quickly during peak visitation periods) and are self-pay, self registration. Rio Grande Village and Basin campgrounds have dump stations and water. Camping is not allowed in parking lots or along roadways.<br>The concession operates the Rio Grande Village RV Campground, the only location with full hook-ups.<br>Primitive roadside campsites, backpacking, and open zone camping require a backcountry permit that must be obtained in person from a visitor center. Without the proper permit, backcountry camping is prohibited.</dd>
+        <dt class="term">Is it possible to reserve a campsite in the park?</dt>
+            <dd class="description">A limited number of campsites in Rio Grande Village and the Chisos Basin campgrounds are reservable from November 15 to April 15 [November 15 to May 31 in the Chisos Basin campground]. Reservations may be made up to 180 days in advance by visiting <a href="https://www.recreation.gov/">recreation.gov</a> or by calling 1-877-444-6777.</dd>
+        <dt class="term">Is cell phone coverage available in the park?</dt>
+            <dd class="description">Cell service is very spotty throughout the entire Big Bend area. Areas with fairly reliable service include the Chisos Basin area, and near Panther Junction.</dd>
+        <dt class="term">What is the cost of the entrance fee?</dt>
+            <dd class="description">A $30 per vehicle entrance fee is required, or a $15 individual fee, unless you have a park pass. Fees and passes can be purchased at entrance stations or visitor centers. Commercial permits are required for businesses. and a special use permit may be required for some activities.</dd>
+        <dt class="term">Are campfires allowed?</dt>
+            <dd class="description">Ground fires and wood fires are prohibited throughout Big Bend National Park. Charcoal is allowed in grills in campgrounds. You may have a fire in a fire pan while on a river trip, or use a containerized fuel stove for backpacking.</dd>
+        <dt class="term">Is fishing allowed in the park?</dt>
+            <dd class="description">Fishing is allowed in the Rio Grande with a free permit issued from a visitor center.</dd>
+        <dt class="term">Are there filling stations in the park?</dt>
+            <dd class="description">Gasoline is available at Panther Junction and Rio Grande Village, and outside the park in Study Butte and Stillwell's Ranch. Diesel is available at Panther Junction and outside the park in Study Butte.</dd>
+    </dl>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        "use strict";
+        
+        $(document).ready(function() {
+            $('#switch').click(function (event) {
+                event.preventDefault();
+                $('.description').toggleClass('invisible');
+            });
+            $('.term').click(function (event) {
+                $('.term').toggleClass('highlight');
+            })
+        });
+
+    </script>
+
+</body>
+</html>
