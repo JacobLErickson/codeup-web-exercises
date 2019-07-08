@@ -24,6 +24,12 @@
     </style>
 </head>
 <body>
+    <div class="junkmail">
+        <h1 id="newsletter">Would you like to sign up for our newsletter? <span id="x">x</span></h1>
+    </div>
+
+    <h2><a href="">Would you like to register for the site?</a></h2>
+
     <h1>Big Bend National Park FAQ</h1>
     <a href="https://www.nps.gov/bibe/faqs.htm">Source</a><br>
 
@@ -51,6 +57,39 @@
             <dd class="description">Gasoline is available at Panther Junction and Rio Grande Village, and outside the park in Study Butte and Stillwell's Ranch. Diesel is available at Panther Junction and outside the park in Study Butte.</dd>
     </dl>
 
+    <Button class="button" id="clickMe">Won't you click me?</Button>
+
+    <div>
+        <div>
+            <h3 class="park-name" id="yellowstone">Yellowstone National Park Facts</h3>
+            <ul class="">
+                <li>Yellowstone National Park was established on March 1, 1872.</li>
+                <li>Yellowstone is the world’s first national park.</li>
+                <li>At 3,472 square miles (8,991 km2), it is larger than Rhode Island and Delaware combined.</li>
+                <li>The park sits on top of an active volcano.</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="park-name" id="Yosemite">Yosemite Facts</h3>
+            <ul class="">
+                <li>The park was first inhabited by Ahwahnechee (meaning “dwellers in Ahwahnee) people around 3000 years ago.</li>
+                <li>The meaning of Yosemite is ‘killer’ in the Miwok language. Miwok is a native American tribe which early settled the region.</li>
+                <li>During sunset, Horsetail waterfalls look like a glowing lava.</li>
+                <li>Once the United States Navy turned Ahwahnee hotel in the park into a naval hospital during the time of the World War II. In 2016, the hotel was renamed as Majestic Yosemite Hotel.</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="park-name" id="Zion">Zion Facts</h3>
+            <ul class="">
+                <li>On November 19, 1919, President Woodrow Wilson signed a bill into law establishing Zion National Park.</li>
+                <li>People have called the canyons and plateaus of Zion National Park home for over 10,000 years. The remnants of their time here exist throughout the park. From humble granaries to improbable highways, these structures stand as testaments to the ingenuity of those that came before us.</li>
+                <li>Towering over and jutting into the canyon, Angels Landing stands 1,488 feet above the Virgin River at its base. The 2.2-mile hike might seem tame, but it includes many switchbacks over sand and slickrock, long drop-offs and exposed edges. Many outdoor publications have listed Angels Landing as one of the most dangerous hikes in the world. But if you come prepared and hike safely, you’ll be rewarded with a view that is out of this world. </li>
+                <li>The journey through Zion's The Subway is like no other. Without any trails, hiking The Subway requires route finding, rappelling and even swimming. To explore the Subway, visitors must get permits, and it is subjected to daily limits.</li>
+            </ul>
+        </div>
+    </div>
+
+
     <script src="js/jquery.js"></script>
     <script>
         "use strict";
@@ -62,8 +101,38 @@
             });
             $('.term').click(function (event) {
                 $('.term').toggleClass('highlight');
-            })
+            });
+
+            $('#clickMe').click(function () {
+                $('ul').each(function() {
+                    $(this).children().last().css('background-color', '#FF0');
+                })
+            });
+
+            // $('h3').click(function () {
+            //     $(this).next().children().css('font-weight', 'bold');
+            // });
+
+            $('li').click(function () {
+                $(this).parent().children().first().css('color', 'dodgerblue');
+            });
+
+            $('#x').click(function () {
+                $('.junkmail').hide();
+            });
+
+            $('h3').next().hide();
+
+            $('h3').click(function () {
+                $(this).next().fadeToggle();
+            });
+
+            $('h2').hide(8000).fadeIn();
+
         });
+
+
+
 
     </script>
 
