@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Practice</title>
+</head>
+<body>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+    // $.ajax('https://swapi.co/api/people/?search=r2').done(function(data){
+    //     console.log(data.results[0].eye_color);
+    // });
+    //
+    // $.ajax('https://swapi.co/api/people/?search=luke').done(function(data){
+    //     console.log(data.results[0].name);
+    // });
+    //
+    // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
+    //     type: 'POST',
+    //     data: {
+    //         name:       "Heavenly Jerusalem",
+    //         location:   "Mt. Zion"
+    //     }
+    // });
+    //
+    // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
+    //     type: "GET",
+    //     data: {
+    //         name:       "Elijah",
+    //         clothing:   "garment of hair"
+    //     }
+    // });
+    //
+    // $.ajax("https://hookb.in/ggaeDLVxlehB0B1y8n6x").done(function(data, status, jqXhr) {
+    //     alert("AJAX call completed successfully!");
+    //     console.log("Request status: " + status);
+    //     console.log("Data returned from server:");
+    //     console.log(data);
+    // });
+    //
+    $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x').done(function(data, status, jqXhr) {
+            alert("Everything went great!");
+            console.log(data);
+        }).fail(function(jqXhr, status, error) {
+            alert('There was an error!');
+            console.log("Response status:" + status);
+            console.log("Error object: " + error);
+        }).always(function() {
+            alert('This function always runs.');
+    });
+
+</script>
+</body>
+</html>
