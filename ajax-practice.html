@@ -10,48 +10,78 @@
 <script>
     "use strict";
 
-    // $.ajax('https://swapi.co/api/people/?search=r2').done(function(data){
-    //     console.log(data.results[0].eye_color);
-    // });
-    //
-    // $.ajax('https://swapi.co/api/people/?search=luke').done(function(data){
-    //     console.log(data.results[0].name);
-    // });
-    //
-    // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
-    //     type: 'POST',
-    //     data: {
-    //         name:       "Heavenly Jerusalem",
-    //         location:   "Mt. Zion"
-    //     }
-    // });
-    //
-    // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
-    //     type: "GET",
-    //     data: {
-    //         name:       "Elijah",
-    //         clothing:   "garment of hair"
-    //     }
-    // });
-    //
-    // $.ajax("https://hookb.in/ggaeDLVxlehB0B1y8n6x").done(function(data, status, jqXhr) {
-    //     alert("AJAX call completed successfully!");
-    //     console.log("Request status: " + status);
-    //     console.log("Data returned from server:");
-    //     console.log(data);
-    // });
-    //
-    $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x').done(function(data, status, jqXhr) {
-            alert("Everything went great!");
-            console.log(data);
-        }).fail(function(jqXhr, status, error) {
-            alert('There was an error!');
-            console.log("Response status:" + status);
-            console.log("Error object: " + error);
-        }).always(function() {
-            alert('This function always runs.');
-    });
+    $(document).ready(function() {
 
+        // $.ajax('https://swapi.co/api/people/?search=r2').done(function(data){
+        //     console.log(data.results[0].eye_color);
+        // });
+        //
+        // $.ajax('https://swapi.co/api/people/?search=luke').done(function(data){
+        //     console.log(data.results[0].name);
+        // });
+        //
+        // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
+        //     type: 'POST',
+        //     data: {
+        //         name:       "Heavenly Jerusalem",
+        //         location:   "Mt. Zion"
+        //     }
+        // });
+        //
+        // $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x', {
+        //     type: "GET",
+        //     data: {
+        //         name:       "Elijah",
+        //         clothing:   "garment of hair"
+        //     }
+        // });
+        //
+        // $.ajax("https://hookb.in/ggaeDLVxlehB0B1y8n6x").done(function(data, status, jqXhr) {
+        //     alert("AJAX call completed successfully!");
+        //     console.log("Request status: " + status);
+        //     console.log("Data returned from server:");
+        //     console.log(data);
+        // });
+        //
+        $.ajax('https://hookb.in/ggaeDLVxlehB0B1y8n6x').done(function(data, status, jqXhr) {
+                alert("Everything went great!");
+                console.log(data);
+            }).fail(function(jqXhr, status, error) {
+                alert('There was an error!');
+                console.log("Response status:" + status);
+                console.log("Error object: " + error);
+            }).always(function() {
+                alert('This function always runs.');
+        });
+
+
+        // Lecture example:
+
+        function updatePage(){
+            var request = $.ajax('./data/orders.json');
+            request.done(function(data));
+            var html = buildHTML(data);
+            //update the document
+        }.fail(function(jqXhr, status, error) {
+            console.log("Something went wrong");
+            console.log(status);
+        });
+
+        updatePage();
+        function buildHTML(orders) {
+            var ordersHTML = "";
+            console.log(orders[1].itemOrdered);
+            ordersHTML = '<h1>' + orders[1].itemOrdered + '</h1>';
+            // for (var i = 0, i < orders.length; i += 1){
+            //     console.log(orders[i].itemOrdered);
+            // }
+            //re-write above as a forEach
+            orders.forEach(function(order) {
+                console.log(order.itemOrdered);
+                ordersHTML += '<h3>' + order.itemOrdered + '</h3>';
+            })
+        }
+    });
 </script>
 </body>
 </html>
