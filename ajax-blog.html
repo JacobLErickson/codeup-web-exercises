@@ -8,21 +8,28 @@
 
     <div id="posts"></div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
         "use strict";
 
-        function updateBlog(){
-            var update = $.get("./data/blog.json");
-            update.done(function(data){
-                $('#posts').html(buildHTML(data));
-            }).fail(function(jqXhr, staus, error) {
-                console.log("Something went wrong");
-                console.log(status);
-            });
-        }
+            function updateBlog(){
+                var update = $.get('./data/blog.json');
+                update.done(function(data){
+                    $('#posts').html(buildHTML(data));
+                }).fail(function(jqXhr, staus, error) {
+                    console.log("Something went wrong");
+                    console.log(status);
+                });
+            }
 
-        updateBlog();
+            updateBlog();
+
+            function buildHTML(data){
+                var html = '';
+                for (var i = 0; i < data.length; i++){
+                    html += ""
+                }
+            }
 
 
 
