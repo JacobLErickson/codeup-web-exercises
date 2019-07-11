@@ -57,30 +57,50 @@
 
         // Lecture example:
 
-        function updatePage(){
-            var request = $.ajax('./data/orders.json');
-            request.done(function(data));
-            var html = buildHTML(data);
-            //update the document
-        }.fail(function(jqXhr, status, error) {
-            console.log("Something went wrong");
-            console.log(status);
-        });
 
-        updatePage();
-        function buildHTML(orders) {
-            var ordersHTML = "";
-            console.log(orders[1].itemOrdered);
-            ordersHTML = '<h1>' + orders[1].itemOrdered + '</h1>';
-            // for (var i = 0, i < orders.length; i += 1){
-            //     console.log(orders[i].itemOrdered);
-            // }
-            //re-write above as a forEach
-            orders.forEach(function(order) {
-                console.log(order.itemOrdered);
-                ordersHTML += '<h3>' + order.itemOrdered + '</h3>';
-            })
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // function updatePage(){
+        //     var request = $.ajax('./data/orders.json');
+        //     request.done(function(data));
+        //     var html = buildHTML(data);
+        //     //update the document
+        // }.fail(function(jqXhr, status, error) {
+        //     console.log("Something went wrong");
+        //     console.log(status);
+        // });
+        //
+        // updatePage();
+        // function buildHTML(orders) {
+        //     var ordersHTML = "";
+        //     console.log(orders[1].itemOrdered);
+        //     ordersHTML = '<h1>' + orders[1].itemOrdered + '</h1>';
+        //     // for (var i = 0, i < orders.length; i += 1){
+        //     //     console.log(orders[i].itemOrdered);
+        //     // }
+        //     //re-write above as a forEach
+        //     orders.forEach(function(order) {
+        //         console.log(order.itemOrdered);
+        //         ordersHTML += '<h3>' + order.itemOrdered + '</h3>';
+        //     })
+        // }
     });
 </script>
 </body>

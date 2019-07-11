@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map API</title>
+</head>
+<body>
+
+<div id="weather">
+    <h1>Weather Application</h1>
+    <h2 id="city">San Antonio</h2>
+
+    <div class="forecast" id="today">
+        <h2 class="temp"></h2>
+        <img src="" alt="">
+        <h5 class="conditions"></h5>
+        <h5 class="humidity">Humidity:</h5>
+        <h5 class="wind">Wind:</h5>
+        <h5 class="pressure">Pressure:</h5>
+    </div>
+    <div class="forecast" id="tomorrow">
+        <h2 class="temp"></h2>
+        <img src="" alt="">
+        <h5 class="conditions"></h5>
+        <h5 class="humidity">Humidity:</h5>
+        <h5 class="wind">Wind:</h5>
+        <h5 class="pressure">Pressure:</h5>
+    </div>
+    <div class="forecast" id="thirdDay">
+        <h2 class="temp"></h2>
+        <img src="" alt="">
+        <h5 class="conditions"></h5>
+        <h5 class="humidity">Humidity:</h5>
+        <h5 class="wind">Wind:</h5>
+        <h5 class="pressure">Pressure:</h5>
+    </div>
+
+    <div class="map"></div>
+
+</div>
+
+<script src="js/keys.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
+        console.log(data);
+        var dateObject = new Date(data.currently.time * 1000);
+        console.log(dateObject);
+    });
+</script>
+</body>
+</html>

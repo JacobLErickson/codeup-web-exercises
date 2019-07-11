@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="posts"></div>
+
+
+    <script>
+        "use strict";
+
+        function updateBlog(){
+            var update = $.get("./data/blog.json");
+            update.done(function(data){
+                $('#posts').html(buildHTML(data));
+            }).fail(function(jqXhr, staus, error) {
+                console.log("Something went wrong");
+                console.log(status);
+            });
+        }
+
+        updateBlog();
+
+
+
+
+    </script>
+</body>
+</html>
