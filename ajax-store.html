@@ -8,6 +8,8 @@
 
 <h1>My Tool Store</h1>
 
+<button id="clickMe">Update</button>
+
 <table id="products">
     <thead>
     <tr>
@@ -25,21 +27,50 @@
 <script>
     (function() {
         "use strict";
-        $(document).ready(function() {
+        console.log("script working!")
+
+        $.ajax('data/inventory.json').done(function(data){
+            console.log(data);
+        });
+        // $(document).ready(function() {
         // TODO: Create an ajax GET request for /data/inventory.json
-            function updateOrd() {
-                var update = $.get('./data/inventory.json');
-                console.log(update);
-            };
-            updateOrd();
+
+            // function updateOrd() {
+            //     var update = $.get('./data/inventory.json');
+            //     update.done(function(data));
+            //     var html = buildHTML(data);
+            // }.fail(function(jqXhr, status, error) {
+            //     console.log("Something went wrong");
+            //     console.log(status);
+            // });
+
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
+            // updateOrd();
+
+            // $.ajax('data/inventory.json').done(function(data){
+            //     console.log(data);
+            // });
+
+            // $('#clickMe').on('click', function(e) {
+            //     $.ajax({
+            //         url : 'data/inventory.json',
+            //         type : 'GET',
+            //         dataType : 'json',
+            //         success : function(data) {
+            //             $('#table_id tbody').append("<tr><td>" + data.column1 + "</td><td>" + data.column2 + "</td><td>" + data.column3 + "</td></tr>");
+            //         },
+            //         error : function() {
+            //             console.log('error');
+            //         }
+            //     });
+            // });
 
 
-        });
+        // });
 
     })();
 </script>
