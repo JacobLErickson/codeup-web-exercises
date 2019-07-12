@@ -13,18 +13,33 @@
 <h3>Hello</h3>
 
 <input id="textbox" type="text">
+<div id="counter"></div>
 
 <script>
     "use strict";
 
-    var text = document.getElementById("textbox");
+    var text = document.getElementById('textbox');
+    var bdy = document.getElementsByTagName('body')[0];
+    var ctr = document.getElementById('counter');
+
 
     text.addEventListener("keyup", function(event){
         var x = event.code;
+        var entr = 1;
         if (x == "KeyG") {
-            alert ("You pressed the 'g' key!");
+            bdy.style['background-color'] = 'purple';
+        } if (x == "Enter") {
+            ctr.innerHTML = "<h3>" + "Enter Key Count: " + entr + "</h3>";
+            entr++;
+        } if (x == "Digit1") {
+            // x += if (x == "Digit2") {
+            //     x += if (x == "Digit3") {
+            //         alert("You get a 50% discount!");
+            //     }
+            // }
         }
     });
+
 
 
 </script>
