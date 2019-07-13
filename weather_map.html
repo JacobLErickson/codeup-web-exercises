@@ -11,7 +11,7 @@
     <h2 id="city">San Antonio</h2>
 
     <div class="forecast" id="today">
-        <h2 class="temp"></h2>
+        <h2 class="temp" id="tempToday"></h2>
         <img src="" alt="">
         <h5 class="conditions"></h5>
         <h5 class="humidity">Humidity:</h5>
@@ -44,9 +44,18 @@
 <script>
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
         console.log(data);
+
+        processData(data.daily.data);
         var dateObject = new Date(data.currently.time * 1000);
         console.log(dateObject);
+
     });
+    function processData(data){
+        console.log(data);
+        $('#tempToday').append(data[0].apparentTemperatureHigh);
+
+    }
+
 </script>
 </body>
 </html>
