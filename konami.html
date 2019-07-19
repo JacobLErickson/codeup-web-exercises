@@ -37,13 +37,13 @@
         if(e.key === konamiCode[konamiPosition]) {
             konamiPosition++;
             console.log(konamiPosition);
-        } if (konamiPosition === konamiCode.length) {
-            alert("You have added 30 lives!");
-            } else {
-            konamiPosition = 0;
+            if (konamiPosition === konamiCode.length) {
+                alert("You have added 30 lives!")
             }
-        });
-    })
+        } else {
+            konamiPosition = 0;
+        }
+    });
 
 </script>
 </body>
