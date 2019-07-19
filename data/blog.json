@@ -16,5 +16,14 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    }, {
+        "title": "The Third Post",
+        "content": "The best taco bowls are made in Trump Tower Grill. I love Hispanics! We are going to make placeholder text great again. Greater than ever before. The best taco bowls are made in Trump Tower Grill. I love Hispanics!",
+        "categories": [
+            "Trump",
+            "Tacos",
+            "MAGA"
+        ],
+        "date": "July 1, 2019"
+}
 ]

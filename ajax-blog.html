@@ -1,39 +1,142 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--    <div id="posts"></div>-->
+
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
+<!--    <script>-->
+<!--        "use strict";-->
+
+<!--            function updateBlog(){-->
+<!--                var update = $.get('./data/blog.json');-->
+<!--                update.done(function(data){-->
+<!--                    $('#posts').html(buildHTML(data));-->
+<!--                }).fail(function(jqXhr, staus, error) {-->
+<!--                    console.log("Something went wrong");-->
+<!--                    console.log(status);-->
+<!--                });-->
+<!--            }-->
+
+<!--            updateBlog();-->
+
+<!--            function buildHTML(data){-->
+<!--                var html = '';-->
+<!--                for (var i = 0; i < data.length; i++){-->
+<!--                    html += "-->
+<!--                }-->
+<!--            }-->
+
+
+
+
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
-    <div id="posts"></div>
+<div id="posts">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    (function() {
         "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
 
-            function updateBlog(){
-                var update = $.get('./data/blog.json');
-                update.done(function(data){
-                    $('#posts').html(buildHTML(data));
-                }).fail(function(jqXhr, staus, error) {
-                    console.log("Something went wrong");
-                    console.log(status);
-                });
+
+
+// wrap ajax and building HTML in a function and add button with event listerer to call the function
+
+        $.ajax('data/blog.json').done(function(blog){
+            console.log(blog);
+            // console log "hammer"
+
+
+            // create an html string for a single table row
+// <tr>
+//     <td>Hammer</td>
+//     <td>25</td>
+//     <td>20</td>
+//     <td>tool</td>
+// </tr>
+            var htmlStr = '';
+
+            for(var i=0; i < blog.length; i++) {
+                htmlStr += '<tr>';
+                htmlStr += '<th><h1>' + blog[i].title +  '</h1></th>';
+                htmlStr += '<td>' + blog[i].date + '</td>';
+                htmlStr += '</tr>';
+                htmlStr += '<td>' + blog[i].content + '</td>';
+                htmlStr += '<td>' + blog[i].categories + '</td>';
             }
 
-            updateBlog();
-
-            function buildHTML(data){
-                var html = '';
-                for (var i = 0; i < data.length; i++){
-                    html += "
-                }
-            }
 
 
 
+            // htmlStr += '<tr>';
+            // htmlStr += '<td>' + blog[0].title +  '</td>';
+            // htmlStr += '<td>' + blog[0].quantity + '</td>';
+            // htmlStr += '<td>' + blog[0].price + '</td>';
+            // htmlStr += '<td>' + blog[0].categories + '</td>';
+            // htmlStr += '</tr>';
+            //
+            // htmlStr += '<tr>';
+            // htmlStr += '<td>' + blog[1].title +  '</td>';
+            // htmlStr += '<td>' + blog[1].quantity + '</td>';
+            // htmlStr += '<td>' + blog[1].price + '</td>';
+            // htmlStr += '<td>' + blog[1].categories + '</td>';
+            // htmlStr += '</tr>';
+            //
+            // htmlStr += '<tr>';
+            // htmlStr += '<td>' + blog[2].title +  '</td>';
+            // htmlStr += '<td>' + blog[2].quantity + '</td>';
+            // htmlStr += '<td>' + blog[2].price + '</td>';
+            // htmlStr += '<td>' + blog[2].categories + '</td>';
+            // htmlStr += '</tr>';
+            //
+            // htmlStr += '<tr>';
+            // htmlStr += '<td>' + blog[3].title +  '</td>';
+            // htmlStr += '<td>' + blog[3].quantity + '</td>';
+            // htmlStr += '<td>' + blog[3].price + '</td>';
+            // htmlStr += '<td>' + blog[3].categories + '</td>';
+            // htmlStr += '</tr>';
 
-    </script>
+
+            $('#posts').html(htmlStr);
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+    })();
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
