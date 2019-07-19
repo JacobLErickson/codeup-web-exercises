@@ -109,9 +109,9 @@
                 })
             });
 
-            // $('h3').click(function () {
-            //     $(this).next().children().css('font-weight', 'bold');
-            // });
+            $('h3').click(function () {
+                $(this).next().children().css('font-weight', 'bold');
+            });
 
             $('li').click(function () {
                 $(this).parent().children().first().css('color', 'dodgerblue');
@@ -127,7 +127,7 @@
                 $(this).next().slideToggle();
             });
 
-            $('h2').hide(8000).fadeIn();
+            $('h2').hide().delay(8000).fadeIn();
 
         });
 
